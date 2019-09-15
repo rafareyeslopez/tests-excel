@@ -1,0 +1,12 @@
+<form action="#" th:action="@{/update/{id}(id=${pregunta.id})}" th:object="${pregunta}" method="post">
+  <label for="enunciado">Enunciado</label>
+    <textarea  th:field="*{enunciado}" id="enunciado" placeholder="Enunciado" />
+    <span th:if="${#fields.hasErrors('enunciado')}" th:errors="*{enunciado}"></span>
+    <label for="textarea">Pregunta</label>
+    <textarea th:field="*{textoPregunta}" id="textoPregunta" placeholder="Pregunta"/>
+    <span th:if="${#fields.hasErrors('textoPregunta')}" th:errors="textoPregunta"></span>
+    <label for="textarea">Solucion</label>
+    <textarea th:field="*{solucion}" id="solucion" placeholder="solucion"/>
+    <span th:if="${#fields.hasErrors('solucion')}" th:errors="solucion"></span>
+    <input type="submit" value="Actualizar pregunta">   
+</form>
