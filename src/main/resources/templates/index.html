@@ -10,32 +10,46 @@
         <link rel="stylesheet" href="../css/shards.min.css">
     </head>
     <body>
-<div th:switch="preguntas" style="padding-left: 1%;">
-    <h2 th:case="null">No hay preguntas!</h2>
+<div th:switch="tests" style="padding-left: 1%;">
+    <h2 th:case="null">No hay tests!!</h2>
         <div th:case="*">
             <h2>TEST</h2>
             <table border="1">
                 <thead>
                     <tr>
-                        <th>Enunciado</th>
-                        <th>Pregunta</th>
-                        <th>Solucion</th>
+                        <th>ENUNCIADO</th>
+                        <th>PREGUNTA</th>
+                        <th>TEMA</th>
+                        <th>RESPUESTA A</th>
+                        <th>RESPUESTA B</th>
+                        <th>RESPUESTA C</th>
+                        <th>RESPUESTA D</th>
+                        <th>CORRECTA EN LETRA</th>
+                        <th>EXPLICACION</th>
+                        <th>Activa (1) / Inactiva (0)</th>
                         <th>Editar</th>
                         <th>Borrar</th>
                     </tr>
                 </thead>
                 <tbody>
-                <tr th:each="pregunta : ${preguntas}">
-                    <td th:text="${pregunta.enunciado}"></td>
-                    <td th:text="${pregunta.textoPregunta}"></td>
-                    <td th:text="${pregunta.solucion}"></td>
-                    <td><a th:href="@{/edit/{id}(id=${pregunta.id})}">Editar</a></td>
-                    <td><a th:href="@{/delete/{id}(id=${pregunta.id})}">Borrar</a></td>
+                <tr th:each="test : ${tests}">
+                    <td th:text="${test.enunciado}"></td>
+                    <td th:text="${test.pregunta}"></td>
+                    <td th:text="${test.tema}"></td>
+                    <td th:text="${test.respuestaA}"></td>
+                    <td th:text="${test.respuestaB}"></td>
+                    <td th:text="${test.respuestaC}"></td>
+                    <td th:text="${test.respuestaD}"></td>
+                    <td th:text="${test.respuestaCorrecta}"></td>
+                    <td th:text="${test.explicacion}"></td>
+                    <td th:text="${test.activa}"></td>
+                    <td><a th:href="@{/edit/{id}(id=${test.id})}">Editar</a></td>
+                    <td><a th:href="@{/delete/{id}(id=${test.id})}">Borrar</a></td>
                 </tr>
             </tbody>
         </table>
     </div>      
-    <p><a href="/signup">Crear nueva pregunta</a></p>
+    <p><a href="/signup">Crear nuevo test</a></p>
 </div>
     </body>
 </html>

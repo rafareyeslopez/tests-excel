@@ -1,0 +1,40 @@
+version: '2'
+services:
+  db-tests:
+    image: postgres:alpine
+    container_name: db-tests
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "5"
+    environment:
+      POSTGRES_PASSWORD: rafael00
+      POSTGRES_USER: rafa
+      POSTGRES_PASSWORD: rafa
+      POSTGRES_DB: tests
+
+    ports:
+      - '5000:5432'
+    expose:
+      - 5000
+    volumes:
+        - ./tests-db:/var/lib/postgresql/data
+
+  java:
+    build: .
+    container_name: tests-excel
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "500k"
+        max-file: "5"
+    ports:
+      - "9094:9094"
+    expose:
+      - 9094      
+    mem_limit: 256M
+    depends_on:
+            - db-tests
+
+            

@@ -1,0 +1,41 @@
+<form action="#" th:action="@{/update/{id}(id=${test.id})}" th:object="${test}" method="post">
+  
+  <label for="enunciado">Enunciado</label>
+    <textarea  th:field="*{enunciado}" id="enunciado" placeholder="Enunciado" />
+    <span th:if="${#fields.hasErrors('enunciado')}" th:errors="*{enunciado}"></span>
+    
+    <label for="textarea">Pregunta</label>
+    <textarea th:field="*{pregunta}" id="pregunta" placeholder="Pregunta"/>
+    <span th:if="${#fields.hasErrors('pregunta')}" th:errors="pregunta"></span>
+    
+    <label for="textarea">Tema</label>
+    <textarea th:field="*{tema}" id="tema" placeholder="tema"/>
+    <span th:if="${#fields.hasErrors('tema')}" th:errors="tema"></span>
+    
+    <label for="textarea">Respuesta A</label>
+    <textarea th:field="*{respuestaA}" id="respuestaA" placeholder="respuestaA"/>
+    <span th:if="${#fields.hasErrors('respuestaA')}" th:errors="respuestaA"></span>
+    
+    
+    <label for="textarea">Respuesta B</label>
+    <textarea th:field="*{respuestaB}" id="respuestaB" placeholder="respuestaB"/>
+    <span th:if="${#fields.hasErrors('respuestaB')}" th:errors="respuestaB"></span>
+    
+    <label for="textarea">Respuesta C</label>
+    <textarea th:field="*{respuestaC}" id="respuestaC" placeholder="respuestaC"/>
+    <span th:if="${#fields.hasErrors('respuestaC')}" th:errors="respuestaC"></span>
+    
+    <label for="textarea">Respuesta D</label>
+    <textarea th:field="*{respuestaD}" id="respuestaD" placeholder="respuestaD"/>
+    <span th:if="${#fields.hasErrors('respuestaD')}" th:errors="respuestaD"></span>
+    
+    <label for="textarea">Respuesta Correcta</label>
+    <textarea th:field="*{respuestaCorrecta}" id="respuestaCorrecta" placeholder="respuestaCorrecta"/>
+    <span th:if="${#fields.hasErrors('respuestaCorrecta')}" th:errors="respuestaCorrecta"></span>
+    
+    <label for="textarea">Explicacion</label>
+    <textarea th:field="*{explicacion}" id="explicacion" placeholder="explicacion"/>
+    <span th:if="${#fields.hasErrors('explicacion')}" th:errors="explicacion"></span>
+    
+    <input type="submit" value="Actualizar pregunta">   
+</form>
