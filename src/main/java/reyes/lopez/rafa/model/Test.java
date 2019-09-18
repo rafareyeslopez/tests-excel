@@ -5,6 +5,7 @@
  */
 package reyes.lopez.rafa.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,9 +20,9 @@ public class Test {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-
+	@Column(columnDefinition = "TEXT")
 	private String enunciado;
-
+	@Column(columnDefinition = "TEXT")
 	private String pregunta;
 
 	private String tema;
@@ -30,6 +31,7 @@ public class Test {
 	private String respuestaC;
 	private String respuestaD;
 	private String respuestaCorrecta;
+	@Column(columnDefinition = "TEXT")
 	private String explicacion;
 	private String activa = "1";
 

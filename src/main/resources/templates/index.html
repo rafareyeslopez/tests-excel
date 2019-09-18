@@ -17,6 +17,7 @@
             <table border="1">
                 <thead>
                     <tr>
+                     	<th>NUMERO</th>
                         <th>ENUNCIADO</th>
                         <th>PREGUNTA</th>
                         <th>TEMA</th>
@@ -33,6 +34,7 @@
                 </thead>
                 <tbody>
                 <tr th:each="test : ${tests}">
+                    <td th:text="${test.id}"></td>
                     <td th:text="${test.enunciado}"></td>
                     <td th:text="${test.pregunta}"></td>
                     <td th:text="${test.tema}"></td>
